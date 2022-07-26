@@ -9,23 +9,29 @@ let numeric = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 // create an array to store answer to questions
 let gatherContent = [];
 
-
+// start of generatePassword function //
 function generatePassword(){
+    // asking for the length of password //
     let passwordLength = parseInt(prompt('How many characters do you want your password to be?'));
+    // checking password minimum requirements //
     if(passwordLength<8 || passwordLength>120){
         alert('Password must be between 8 and 120 characters');
         return null;
     }
 
+    // asking what the user wants in there password //
     let hasSpecialCharacters = confirm('Do you want special characters?')
     let hasUpperCase = confirm('Do you want uppercase letters?');
     let hasLowerCase = confirm('Do you want lowercase letters?');
     let hasNumbers = confirm('Do you want numbers?')
 
+    // checking password minimum requirements //
     if(!hasSpecialCharacters && !hasUpperCase && !hasLowerCase && !hasNumbers){
         alert('Password does not meet minimun requirements')
         return null;
     }
+
+    // adding user response to the gathercontent array //
     if(hasSpecialCharacters){
         gatherContent = gatherContent.concat(specialCharacter)
     }
@@ -40,14 +46,17 @@ function generatePassword(){
     }
 
     let results = []
+    // start of for loop //
     for(let i = 0; i < passwordLength; i++){
+        // creating random number to number/letters/characters for password //
         let randomIndex = Math.floor(Math.random() * gatherContent.length)
         let randomContent = gatherContent[randomIndex];
         results.push(randomContent);
     }
+    // end of for loop //
     return results.join("");
 }
-
+// end of generatePassword function //
 
 
 
