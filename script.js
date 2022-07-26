@@ -26,8 +26,26 @@ function generatePassword(){
         alert('Password does not meet minimun requirements')
         return null;
     }
+    if(hasSpecialCharacters){
+        gatherContent = gatherContent.concat(specialCharacter)
+    }
+    if(hasUpperCase){
+        gatherContent = gatherContent.concat(upperCase)
+    }
+    if(hasLowerCase){
+        gatherContent = gatherContent.concat(lowerCase)
+    }
+    if(hasNumbers){
+        gatherContent = gatherContent.concat(numeric)
+    }
 
-    
+    let results = []
+    for(let i = 0; i < passwordLength; i++){
+        let randomIndex = Math.floor(Math.random() * gatherContent.length)
+        let randomContent = gatherContent[randomIndex];
+        results.push(randomContent);
+    }
+    return results.join("");
 }
 
 
