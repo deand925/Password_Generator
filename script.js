@@ -14,8 +14,8 @@ function generatePassword(){
     // asking for the length of password //
     let passwordLength = parseInt(prompt('How many characters do you want your password to be?'));
     // checking password minimum requirements //
-    if(passwordLength<8 || passwordLength>120){
-        alert('Password must be between 8 and 120 characters');
+    if(passwordLength<8 || passwordLength>128){
+        alert('Password must be between 8 and 128 characters');
         return null;
     }
 
