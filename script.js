@@ -7,10 +7,12 @@ let lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 // Array of numeric characters to be included in password
 let numeric = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 // create an array to store answer to questions
-let gatherContent = [];
+
 
 // start of generatePassword function //
 function generatePassword(){
+    let gatherContent = [];
+    console.log(gatherContent)
     // asking for the length of password //
     let passwordLength = parseInt(prompt('How many characters do you want your password to be?'));
     // checking password minimum requirements //
@@ -44,7 +46,7 @@ function generatePassword(){
     if(hasNumbers){
         gatherContent = gatherContent.concat(numeric)
     }
-
+    console.log(gatherContent)
     let results = []
     // start of for loop //
     for(let i = 0; i < passwordLength; i++){
@@ -70,7 +72,6 @@ function writePassword() {
     var passwordText = document.querySelector("#password");
     // changing from text to 
     passwordText.value = password;
-
 }
 
 // Add event listener to generate button
